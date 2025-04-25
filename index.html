@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Emprego | COREN-DF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="/index.html">
+                <img src="img/logo-negativa.png" alt="Logo" width="250">
+            </a>
+
+            <div class="mx-auto">
+                <img src="img/logo portal cropada.png" alt="Imagem Central" style="height: 100px;">
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.coren-df.gov.br/">Coren-DF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/empresas.html">Empresas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/acessar.html">Acessar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container d-flex justify-content-center align-items-start"
+        style="padding-top: 100px; min-height: 75vh;">
+        <div class="wrapper">
+            <div class="d-flex justify-content-center mb-4 search-container">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Pesquisar vaga..."
+                        aria-label="Pesquisar vaga" oninput="filterJobs()">
+                    <select class="form-select" id="categoryFilter" aria-label="Filtro por categoria"
+                        onchange="filterJobs()">
+                        <option value="">Categoria</option>
+                        <option value="Auxiliar de Enfermagem">Auxiliar de Enfermagem</option>
+                        <option value="Técnico de Enfermagem">Técnico de Enfermagem</option>
+                    </select>
+                    <button class="btn-pesquisar" type="button" onclick="filterJobs()">Pesquisar</button>
+
+                </div>
+            </div>
+
+            <!-- Cards de vagas -->
+            <div id="jobCards">
+                <div class="col-md-10 offset-md-1 mb-4 job-card" data-category="Auxiliar de Enfermagem">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Auxiliar de Enfermagem</h5>
+                            <p class="card-text">COOPCARE - Inserido em 17/07/2023</p>
+                            <div class="d-flex justify-content-center">
+                                <button class="custom-btn btn-azul btn-compacto" data-bs-toggle="collapse"
+                                    data-bs-target="#details1">
+                                    Detalhes
+                                </button>
+                            </div>
+                            <div id="details1" class="collapse mt-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Cargo: Auxiliar de Enfermagem</li>
+                                    <li class="list-group-item">Descrição: Atuação em Home Care</li>
+                                    <li class="list-group-item">Requisitos: Coren ativo</li>
+                                    <li class="list-group-item">Salário: A combinar</li>
+                                    <li class="list-group-item">Carga Horária: 40 horas semanais</li>
+                                    <li class="list-group-item">Como se candidatar: Enviar CV para WhatsApp: 61
+                                        99820-7133</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 offset-md-1 mb-4 job-card" data-category="Técnico de Enfermagem">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Técnico de Enfermagem</h5>
+                            <p class="card-text">SCOOPCARE - Inserido em 20/07/2023</p>
+                            <div class="d-flex justify-content-center">
+                                <button class="custom-btn btn-azul btn-compacto" data-bs-toggle="collapse"
+                                    data-bs-target="#details2">
+                                    Detalhes
+                                </button>
+
+                            </div>
+                            <div id="details2" class="collapse mt-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Cargo: Técnico de Enfermagem</li>
+                                    <li class="list-group-item">Descrição: Atendimento domiciliar</li>
+                                    <li class="list-group-item">Requisitos: Coren ativo</li>
+                                    <li class="list-group-item">Salário: A combinar</li>
+                                    <li class="list-group-item">Carga Horária: 40 horas semanais</li>
+                                    <li class="list-group-item">Como se candidatar: Enviar CV para WhatsApp: 61
+                                        99820-7133</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-slim d-flex justify-content-center align-items-center flex-wrap text-white">
+        <img src="img/logo-negativa.png" alt="Logo COREN-DF" class="footer-logo-slim me-2">
+        <p class="mb-0 small text-center">
+            © 2025 Portal de Emprego – <a href="https://www.coren-df.gov.br"
+                class="text-white text-decoration-none">Coren-DF</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterJobs() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const jobCards = document.querySelectorAll('.job-card');
+
+            jobCards.forEach(card => {
+                const jobTitle = card.querySelector('.card-title').textContent.toLowerCase();
+                const jobCategory = card.getAttribute('data-category');
+
+                // Verifica se o título contém a pesquisa e se a categoria corresponde ao filtro
+                const matchesSearch = jobTitle.includes(searchInput);
+                const matchesCategory = categoryFilter ? jobCategory === categoryFilter : true;
+
+                // Exibe ou oculta o card com base nos filtros
+                if (matchesSearch && matchesCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Empresa | COREN-DF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="/index.html">
+                <img src="img/logo-negativa.png" alt="Logo" width="250">
+            </a>
+
+            <div class="mx-auto">
+                <img src="img/logo portal cropada.png" alt="Imagem Central" style="height: 100px;">
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.coren-df.gov.br/">Coren-DF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/empresas.html">Empresas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/acessar.html">Acessar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="col-md-8">
+            <div class="card p-4">
+                <h3 class="text-center mb-4">Cadastro de Empresa</h3>
+                <form id="formCadastroEmpresa">
+                    <div class="mb-3">
+                        <label for="nomeEmpresa" class="form-label">Nome da Empresa</label>
+                        <input type="text" class="form-control" id="nomeEmpresa" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="razaoSocial" class="form-label">Razão Social</label>
+                        <input type="text" class="form-control" id="razaoSocial" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cnpj" class="form-label">CNPJ</label>
+                        <input type="text" class="form-control" id="cnpj" maxlength="18" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" maxlength="15" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="site" class="form-label">Site</label>
+                        <input type="url" class="form-control" id="site">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="text" class="form-control" id="cep" maxlength="9" required>
+                    </div>
+
+                    <!-- CAPTCHA -->
+                    <div class="mb-3">
+                        <label for="captchaInput" class="form-label">Digite o código abaixo para confirmar que você é
+                            humano:</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <input type="text" class="form-control" id="captchaInput" placeholder="Digite o código"
+                                required>
+                            <span id="captchaCode" class="fw-bold text-primary"></span>
+                            <button type="button" class="btn btn-secondary btn-sm" id="btnReloadCaptcha">⟳</button>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success custom-btn btn-verde">Cadastrar Empresa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-slim d-flex justify-content-center align-items-center flex-wrap text-white">
+        <img src="img/logo-negativa.png" alt="Logo COREN-DF" class="footer-logo-slim me-2">
+        <p class="mb-0 small text-center">
+            © 2025 Portal de Emprego – <a href="https://www.coren-df.gov.br"
+                class="text-white text-decoration-none">Coren-DF</a>
+        </p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Configuração avançada das máscaras
+            $("#cnpj").inputmask({
+                mask: "99.999.999/9999-99",
+                placeholder: "__.___.___/____-__",
+                clearIncomplete: true,
+                showMaskOnHover: false,
+                removeMaskOnSubmit: false,
+                autoUnmask: false,
+                onincomplete: function () {
+                    $(this).val('');
+                    return false;
+                },
+                oncomplete: function () {
+                    return true;
+                }
+            });
+
+            $("#telefone").inputmask({
+                mask: "(99) 99999-9999",
+                placeholder: "(__) _____-____",
+                clearIncomplete: true,
+                showMaskOnHover: false,
+                removeMaskOnSubmit: false,
+                autoUnmask: false,
+                onincomplete: function () {
+                    $(this).val('');
+                    return false;
+                },
+                oncomplete: function () {
+                    return true;
+                }
+            });
+
+            $("#cep").inputmask({
+                mask: "99999-999",
+                placeholder: "_____-___",
+                clearIncomplete: true,
+                showMaskOnHover: false,
+                removeMaskOnSubmit: false,
+                autoUnmask: false,
+                onincomplete: function () {
+                    $(this).val('');
+                    return false;
+                },
+                oncomplete: function () {
+                    return true;
+                }
+            });
+
+            // Validação adicional para rejeitar qualquer caractere não permitido
+            $("#cnpj, #telefone, #cep").on("keypress", function (e) {
+                const charCode = (e.which) ? e.which : e.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            });
+
+            // Limitar o tamanho máximo dos campos
+            $("#cnpj").on("input", function () {
+                if ($(this).val().replace(/[^0-9]/g, '').length > 14) {
+                    $(this).val($(this).val().substring(0, 18));
+                }
+            });
+
+            $("#telefone").on("input", function () {
+                if ($(this).val().replace(/[^0-9]/g, '').length > 11) {
+                    $(this).val($(this).val().substring(0, 15));
+                }
+            });
+
+            $("#cep").on("input", function () {
+                if ($(this).val().replace(/[^0-9]/g, '').length > 8) {
+                    $(this).val($(this).val().substring(0, 9));
+                }
+            });
+
+            // CAPTCHA
+            function gerarCaptcha() {
+                const caracteres = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+                let codigo = '';
+                for (let i = 0; i < 6; i++) {
+                    codigo += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+                }
+                document.getElementById('captchaCode').textContent = codigo;
+                return codigo;
+            }
+
+            let captchaAtual = gerarCaptcha();
+
+            $('#btnReloadCaptcha').on('click', function () {
+                captchaAtual = gerarCaptcha();
+            });
+
+            $('#formCadastroEmpresa').on('submit', function (event) {
+                // Validar formato do CNPJ
+                const cnpj = $('#cnpj').val();
+                if (cnpj.replace(/[^\d]/g, '').length !== 14) {
+                    event.preventDefault();
+                    alert('Por favor, digite um CNPJ válido com 14 dígitos.');
+                    return false;
+                }
+
+                // Validar formato do telefone
+                const telefone = $('#telefone').val();
+                if (telefone.replace(/[^\d]/g, '').length < 10) {
+                    event.preventDefault();
+                    alert('Por favor, digite um telefone válido.');
+                    return false;
+                }
+
+                // Validar formato do CEP
+                const cep = $('#cep').val();
+                if (cep.replace(/[^\d]/g, '').length !== 8) {
+                    event.preventDefault();
+                    alert('Por favor, digite um CEP válido com 8 dígitos.');
+                    return false;
+                }
+
+                // Validar CAPTCHA
+                const entrada = $('#captchaInput').val().trim().toUpperCase();
+                if (entrada !== captchaAtual) {
+                    event.preventDefault();
+                    alert('Código incorreto. Por favor, tente novamente.');
+                    captchaAtual = gerarCaptcha();
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Emprego | COREN-DF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand" href="/index.html">
+                <img src="img/logo-negativa.png" alt="Logo" width="250">
+            </a>
+
+            <div class="mx-auto">
+                <img src="img/logo portal cropada.png" alt="Imagem Central" style="height: 100px;">
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.coren-df.gov.br/">Coren-DF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/empresas.html">Empresas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/acessar.html">Acessar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="card card-body" id="texto-login">
+                <h4>Políticas e Condições</h4>
+                <p>As políticas para empresas de saúde divulgarem vagas de emprego de enfermeiros no Portal de Empregos
+                    do Coren-DF devem ser estabelecidas para assegurar um processo de divulgação ético, transparente e
+                    eficiente. A seguir, descrevemos as políticas e suas respectivas regras nesse contexto:</p>
+                <p>Política: Empresas de saúde podem divulgar vagas de emprego de enfermeiros no site do COREN-DF, desde
+                    que sigam as regras e diretrizes estabelecidas pelo conselho e garantam a conformidade com a
+                    legislação trabalhista e o Código de Ética da Enfermagem.</p>
+
+                <p><strong>Políticas:</strong></p>
+
+                <p><strong>1)</strong> Registro e autorização: As empresas devem se registrar no site do COREN-DF e
+                    solicitar autorização para divulgar vagas de emprego. O registro pode envolver o preenchimento de um
+                    formulário com informações da empresa e contatos relevantes.</p>
+
+                <p><strong>2)</strong> Informações detalhadas e precisas: As vagas devem ser divulgadas com informações
+                    completas e precisas sobre o cargo, incluindo descrição, responsabilidades, requisitos, carga
+                    horária, remuneração, benefícios, localização e procedimentos para se candidatar.</p>
+
+                <p><strong>3)</strong> Conformidade com a legislação trabalhista: As empresas devem assegurar que as
+                    vagas estejam em conformidade com as leis trabalhistas vigentes no Brasil, incluindo salários, carga
+                    horária, condições de trabalho e outros aspectos relacionados.</p>
+
+                <p><strong>4)</strong> Adesão ao Código de Ética da Enfermagem: As vagas divulgadas devem respeitar os
+                    princípios e diretrizes do Código de Ética da Enfermagem, que rege a atuação dos profissionais da
+                    área.
+
+                <p><strong>5)</strong> Responsabilidade pela veracidade das informações: As empresas são responsáveis
+                    pela veracidade das informações divulgadas e devem atualizá-las sempre que necessário. Em caso de
+                    informações incorretas ou enganosas, o COREN-DF pode suspender ou remover a divulgação da vaga.</p>
+
+                <p><strong>6)</strong> Prazo de divulgação: As empresas devem seguir os prazos estabelecidos pelo
+                    COREN-DF para a divulgação das vagas e informar o conselho sobre o preenchimento das mesmas ou a
+                    necessidade de prorrogação do prazo.</p>
+
+                <p><strong>7)</strong> Privacidade dos candidatos: As empresas devem garantir a privacidade e a
+                    segurança das informações dos candidatos que se inscreverem nas vagas divulgadas, em conformidade
+                    com a legislação de proteção de dados pessoais.</p>
+
+                <p><strong>8)</strong> Não discriminação: As vagas divulgadas não devem discriminar candidatos com base
+                    em gênero, idade, etnia, religião, orientação sexual, deficiência ou qualquer outro aspecto pessoal,
+                    conforme a legislação brasileira.</p>
+
+                <p>Seguindo essas políticas e suas respectivas regras, as empresas de saúde podem divulgar vagas de
+                    emprego para profissionais de enfermagem no Portal de Empregos do Coren-DF de maneira ética e
+                    responsável, contribuindo para a transparência e a integridade do processo de contratação no setor
+                    de saúde.</p>
+
+
+                <div class="d-flex flex-column align-items-center mt-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="termosAceite">
+                        <label class="form-check-label" for="termosAceite">
+                            Eu li e aceito os termos e condições.
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary custom-btn btn-azul"
+                        onclick="verificarAceiteDireto()">Prosseguir</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-slim d-flex justify-content-center align-items-center flex-wrap text-white">
+        <img src="img/logo-negativa.png" alt="Logo COREN-DF" class="footer-logo-slim me-2">
+        <p class="mb-0 small text-center">
+            © 2025 Portal de Emprego – <a href="https://www.coren-df.gov.br"
+                class="text-white text-decoration-none">Coren-DF</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function verificarAceiteDireto() {
+            const checkbox = document.getElementById('termosAceite');
+            if (!checkbox.checked) {
+                alert("Por favor, aceite as políticas e condições para prosseguir.");
+            } else {
+                window.location.href = '/formulario_cadastro_empresa.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

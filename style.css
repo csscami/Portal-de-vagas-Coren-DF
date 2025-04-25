@@ -1,0 +1,223 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #ffffff url("https://www.transparenttextures.com/patterns/back-pattern.png") repeat;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 140px;
+    min-height: calc(100vh - 140px - 120px);
+    overflow-y: auto;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    color: white;
+    margin-right: 30px;
+}
+
+.nav-link:last-child {
+    margin-right: 0;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.navbar {
+    background-color: #034e99;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .mx-auto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer {
+    background-color: #034e99;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+footer .footer-logo {
+    width: 150px;
+    margin-right: 10px;
+}
+
+footer .footer-text {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    footer .footer-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.card-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.search-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.input-group {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.form-control,
+.form-select,
+.btn-primary {
+    height: 50px;
+    font-size: 1.1rem;
+}
+
+.form-control {
+    border-radius: 50px 50px;
+    padding-left: 15px;
+}
+
+.form-select {
+    border-radius: 0 50px 50px 0;
+}
+
+.btn-primary {
+    border-radius: 50px;
+}
+#texto-login h4 {
+    text-align: center;
+}
+.logo-acessar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-slim {
+    background-color: #034e99;
+    padding: 5px 15px;
+    font-size: 0.85rem;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    gap: 10px;
+  }
+  
+  .footer-logo-slim {
+    width: 100px;
+    height: auto;
+  }
+  .custom-btn {
+    display: inline-block;
+    width: 220px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-azul {
+    background-color: #034e99;
+}
+
+.btn-azul:hover {
+    background-color: #023e7d;
+    transform: scale(1.05);
+}
+
+.btn-verde {
+    background-color: #28a745;
+}
+
+.btn-verde:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+.btn-compacto {
+    padding: 10px 16px;
+    font-size: 1rem;
+    width: 150px;
+}
+.btn-pesquisar {
+    background-color: #034e99;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-pesquisar:hover {
+    background-color: #023e7d;
+    transform: scale(1.05);
+}
