@@ -1,5 +1,5 @@
-html,
-body {
+/* ===== RESET E BASE ===== */
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -12,6 +12,7 @@ body {
     background: #ffffff url("https://www.transparenttextures.com/patterns/back-pattern.png") repeat;
 }
 
+/* ===== LAYOUT PRINCIPAL ===== */
 main {
     flex: 1;
     display: flex;
@@ -28,39 +29,20 @@ main {
     max-width: 960px;
 }
 
-.navbar-nav {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-link {
-    padding: 8px 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 2px solid white;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    color: white;
-    margin-right: 30px;
-}
-
-.nav-link:last-child {
-    margin-right: 0;
-}
-
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    transform: scale(1.05);
-}
-
+/* ===== NAVBAR ===== */
 .navbar {
-    background-color: #034e99;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #034e99; /* Cor original escura */
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
+.navbar.scrolled {
+    padding: 8px 0;
+    background-color: rgba(3, 78, 153, 0.98) !important; /* Mantendo a opacidade no scroll */
+    backdrop-filter: blur(10px);
+}
+
 
 .navbar .mx-auto {
     position: absolute;
@@ -68,6 +50,73 @@ main {
     transform: translateX(-50%);
 }
 
+.navbar-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-link {
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    margin-right: 15px;
+}
+
+.nav-link:last-child {
+    margin-right: 0;
+}
+
+.nav-link:hover {
+    color: white;
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 70%;
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-login {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+}
+
+.btn-login:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.transition-scale {
+    transition: transform 0.3s ease;
+}
+
+.transition-scale:hover {
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
 footer {
     background-color: #034e99;
     color: white;
@@ -79,7 +128,7 @@ footer {
     width: 100%;
 }
 
-footer .footer-container {
+.footer-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,26 +136,41 @@ footer .footer-container {
     text-align: center;
 }
 
-footer .footer-logo {
+.footer-logo {
     width: 150px;
     margin-right: 10px;
 }
 
-footer .footer-text {
+.footer-text {
     margin-left: 10px;
 }
 
-@media (max-width: 768px) {
-    footer .footer-container {
-        flex-direction: column;
-    }
-
-    footer .footer-logo {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
+.footer-slim {
+    padding: 5px 15px;
+    font-size: 0.85rem;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    gap: 10px;
 }
 
+.footer-logo-slim {
+    width: 100px;
+    height: auto;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffc107;
+}
+
+/* ===== COMPONENTES ===== */
 .card-title {
     font-weight: bold;
     text-align: center;
@@ -136,7 +200,7 @@ footer .footer-text {
 }
 
 .form-control {
-    border-radius: 50px 50px;
+    border-radius: 50px;
     padding-left: 15px;
 }
 
@@ -147,29 +211,15 @@ footer .footer-text {
 .btn-primary {
     border-radius: 50px;
 }
-#texto-login h4 {
-    text-align: center;
-}
+
 .logo-acessar {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.footer-slim {
-    background-color: #034e99;
-    padding: 5px 15px;
-    font-size: 0.85rem;
-    width: 100%;
-    height: auto;
-    min-height: 50px;
-    gap: 10px;
-  }
-  
-  .footer-logo-slim {
-    width: 100px;
-    height: auto;
-  }
-  .custom-btn {
+
+/* ===== BOTÕES ===== */
+.custom-btn {
     display: inline-block;
     width: 220px;
     padding: 12px 20px;
@@ -201,11 +251,13 @@ footer .footer-text {
     background-color: #218838;
     transform: scale(1.05);
 }
+
 .btn-compacto {
     padding: 10px 16px;
     font-size: 1rem;
     width: 150px;
 }
+
 .btn-pesquisar {
     background-color: #034e99;
     color: white;
@@ -221,14 +273,119 @@ footer .footer-text {
     background-color: #023e7d;
     transform: scale(1.05);
 }
-.footer-link {
-    color: #ffffff;
-    text-decoration: underline;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
 
-  .footer-link:hover {
-    color: #ffc107; /* amarelo ou outra cor de destaque */
-    text-decoration: underline;
-  }
+.btn-cadastrar-empresa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(135deg, #034e99 0%, #0284c7 100%);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(2, 78, 153, 0.4);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cadastrar-empresa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(2, 78, 153, 0.5);
+}
+
+.btn-cadastrar-empresa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-cadastrar-empresa:hover::before {
+    left: 100%;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 991.98px) {
+    .navbar-brand img {
+        width: 180px;
+    }
+    
+    .navbar-collapse {
+        padding: 20px 0;
+        background: linear-gradient(135deg, #034e99 0%, #0284c7 100%);
+        margin-top: 10px;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .btn-login {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .footer-container {
+        flex-direction: column;
+    }
+
+    footer .footer-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+.btn-cadastrar-empresa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient(135deg, #034e99 0%, #0284c7 100%);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(2, 78, 153, 0.4);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-cadastrar-empresa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(2, 78, 153, 0.5);
+    color: white;
+}
+
+.btn-cadastrar-empresa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-cadastrar-empresa:hover::before {
+    left: 100%;
+}
